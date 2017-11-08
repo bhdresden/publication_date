@@ -33,7 +33,7 @@ function publication_date_ds_fields_info($entity_type) {
       'title' => t('Unpublished on'),
       'field_type' => DS_FIELD_TYPE_FUNCTION,
       'function' => 'publication_date_render_unpublished_at_field',
-      'file' => drupal_get_path('module', 'publication_date') . '/publication_date.ds_fields_info.inc',
+      'file' => drupal_get_path('module', 'upublication_date') . '/publication_date.ds_fields_info.inc',
       'properties' => array(
           'formatters' => $date_formatters,
       ),
@@ -68,7 +68,7 @@ function publication_date_render_unpublished_at_field($field) {
         return format_date($field['entity']->unpublished_at, $date_format);
     }
     else {
-        // If the entity has never been published, then return the current time.
+        // If the entity has never been unpublished, then return the current time.
         return format_date(time(), $date_format);
     }
 }
